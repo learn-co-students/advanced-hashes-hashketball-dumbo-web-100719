@@ -53,8 +53,8 @@
      :slam_dunks => 12,
      }
      ]
-}
-{ :home => { :team_name => "Brooklyn Nets",
+},
+:home => { :team_name => "Brooklyn Nets",
 :colors => ["Black", "White"], 
 :players => [
   {:player_name => "Alan Anderson",
@@ -106,7 +106,14 @@
   :steals => 4,
   :blocks => 11,
   :slam_dunks => 1
-  }]
+  }
+  ]
+}
+}
+end 
+
+
+  
 
 
 
