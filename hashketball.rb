@@ -153,8 +153,13 @@ def shoe_size(name)
 end
 
 def team_colors(team_name)
-  
+  hash = game_hash
+  hash.each do |home_away,info|
+    if info[:team_name] == team_name
+      return info[:colors]
+    end
+  end
 end
 
-p shoe_size("Ben Gordon")
+p team_colors('Brooklyn Nets')
 
