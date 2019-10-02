@@ -201,11 +201,9 @@ def big_shoe_rebounds
     team.each do |attributes, data|
       if attributes == :players
        data.each do |player|
-        # binding.pry
          if player[:shoe] > shoe_size
            shoe_size = player[:shoe]
            rebounds = player[:rebounds]
-          #binding.pry
         end
       end
      end
@@ -214,6 +212,23 @@ def big_shoe_rebounds
    return rebounds
  end
 
+# def most_points_scored
+#   score = 0 
+#   game_hash.each do |place, team|
+#     team.each do |attributes, data|
+#       if attributes == :players
+#       data.each do |player|
+#         if player[:points] > score
+#           score == player[:points]
+#           end
+#       end
+#     end
+#     end
+#   end 
+#   return score
+# end   
+           
+  
 
 
 
