@@ -194,13 +194,26 @@ def player_stats(players_name)
   new_hash
 end
 
-def player_with_longest_name(players_name)
+def big_shoe_rebounds
+  shoe_size = 12
+  rebounds = 0
   game_hash.each do |place, team|
     team.each do |attributes, data|
-      binding.pry
-  end 
-end 
-end 
+      if attributes == :players
+       data.each do |player|
+        # binding.pry
+         if player[:shoe] > shoe_size
+           shoe_size = player[:shoe]
+           rebounds = player[:rebounds]
+          #binding.pry
+        end
+      end
+     end
+    end
+   end 
+   return rebounds
+ end
+
 
 
 
