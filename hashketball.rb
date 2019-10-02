@@ -161,7 +161,6 @@ def team_colors(team_name)
   end
 end
 
-
 def team_names
   result_array = []
   hash = game_hash
@@ -171,3 +170,16 @@ def team_names
   p result_array
 end
 
+def player_numbers (team_name)
+  result_array = []
+  game_hash.each do |home_away,info|
+    if info[:team_name] == team_name
+      info[:players].each do |player|
+        result_array << player[:number]
+      end 
+    end
+  end
+  return result_array
+end
+
+p player_numbers('Brooklyn Nets')
