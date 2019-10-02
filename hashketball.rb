@@ -167,7 +167,7 @@ def team_names
   hash.each do |home_away,info|
     result_array << hash[home_away][:team_name]
   end
-  p result_array
+  result_array
 end
 
 def player_numbers (team_name)
@@ -182,4 +182,19 @@ def player_numbers (team_name)
   return result_array
 end
 
-p player_numbers('Brooklyn Nets')
+
+def player_stats (name)
+  player_stat_hash = {}
+  game_hash.each do |home_away,info|
+    info[:players].each do |player|
+      if player[:player_name] == name
+        player_stat_hash = player.delete_if do |k,v|
+          k == :player_name
+        end
+      end
+    end
+  end
+  player_stat_hash
+end
+
+
