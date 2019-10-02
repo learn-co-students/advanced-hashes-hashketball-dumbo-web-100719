@@ -62,7 +62,7 @@ def game_hash
   ]
 }, 
   :away => {
-    :team_name => "Charlotte Hournets",
+    :team_name => "Charlotte Hornets",
     :colors => ["Turquoise", "Purple"],
     :players => [
      {
@@ -161,7 +161,52 @@ def team_colors(team_input)
 end
 
 def team_names
-  game_hash.collect do |_place, team|
-    team[:team_name]
+  game_hash.map do |team, team_info|
+    team_info[:team_name]
   end
+end
+
+def player_numbers(team_name)
+  array = [] 
+  game_hash.each do |where, team|
+    if team[:team_name] == team_name 
+      team.each do |players, data|
+        if players == :players
+          data.each do |player|
+          array.push(player[:number])
+          end
+        end
+      end
+    end
+  end
+  return array
+end
+
+def player_stats(players_name)
+  game_hash.each do |where, team|
+    team.each do |players, data|
+      if players == :players
+        data.each do |player|
+          if player[:player_name] == players_name
+             player.delete(:player_name)
+            return player
+          end
+        end 
+      end 
+    end 
+  end
+end
+
+def big_shoe_rebounds
+  big_shoe = 0
+  rebounds = 0
+  game_hash.each do |team, team_info|
+    team_info[:players].each do |player|
+      if player[:shoe] > big_shoe
+        big_shoe = player[:shoe]
+        rebounds = player[:rebounds]
+      end
+    end
+  end
+  return rebounds
 end
