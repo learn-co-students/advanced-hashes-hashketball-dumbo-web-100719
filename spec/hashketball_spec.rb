@@ -248,6 +248,8 @@ end
 
 # If you'd like to work on the bonus, uncomment these tests.
 
+=begin
+
 describe 'bonus' do
 
   describe '#most_points_scored' do
@@ -257,6 +259,8 @@ describe 'bonus' do
     end
 
   end
+
+
 
   describe '#winning_team' do
 
@@ -281,9 +285,12 @@ describe 'super bonus' do
   describe '#long_name_steals_a_ton?' do
 
     it 'returns true' do
-      expect(long_name_steals_a_ton?).to eq(true)
-    end
+     expect(long_name_steals_a_ton?).to eq(true)
+   end
 
-  end
+ end
 
 end
+
+=end
+
