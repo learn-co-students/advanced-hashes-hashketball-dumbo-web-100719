@@ -161,5 +161,13 @@ def team_colors(team_name)
   end
 end
 
-p team_colors('Brooklyn Nets')
+
+def team_names
+  result_array = []
+  hash = game_hash
+  hash.each do |home_away,info|
+    result_array << hash[home_away][:team_name]
+  end
+  p result_array
+end
 
