@@ -9,7 +9,7 @@ def game_hash
        :shoe => 18,
        :points => 10,
        :rebounds => 1,
-       :assista => 1,
+       :assists => 1,
        :steals => 2,
        :blocks => 7,
        :slam_dunks => 2 
@@ -73,7 +73,7 @@ def game_hash
    :number => 30,
    :shoe => 14,
    :points => 12,
-   :rebouns => 12,
+   :rebounds => 12,
    :assists => 12,
    :steals => 12,
    :blocks => 12,
@@ -161,18 +161,38 @@ def team_names
 end
 
 def player_numbers(team_name)
-  if team[:team_name] == team_name
+  nums = []
+  game_hash.each do |place, team|
+    if team[:team_name] == team_name
     team.each do |attributes, data|
     if attributes == :players
       data.each do |player|
-      player[:number]
+      nums << player[:number]
+    end
     end
   end
   end
  end
+ nums
 end
   
-
+def player_stats(players_name)
+  new_hash = {}
+  game_hash.each do |place, team|
+    team.each do |attributes, data|
+      if attributes == :players
+        data.each do |player|
+          if player[:player_name] == players_name
+            new_hash = player.delete_if do |k, v|
+              k == :player_name
+            end
+          end
+        end
+      end
+    end
+  end
+  new_hash
+end
 
 
 
