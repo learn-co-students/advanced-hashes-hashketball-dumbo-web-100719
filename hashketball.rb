@@ -194,6 +194,14 @@ def player_stats(players_name)
   new_hash
 end
 
+def player_with_longest_name(players_name)
+  game_hash.each do |place, team|
+    team.each do |attributes, data|
+      binding.pry
+  end 
+end 
+end 
+
 
 
 
