@@ -1,4 +1,6 @@
-# def game_hash
+require 'pry'
+
+def game_hash
 { :away => { :team_name => "Charlotte Hornets",
    :colors => ["Turquoise", "Purple"],
    :players => [
@@ -112,9 +114,64 @@
 }
 end 
 
-
+def num_points_scored(players_name)
+  # return number of points for player passed in
+  game_hash.each do |place, team|
+    team.each do |attribute, data|
+      if attribute == :players
+        data.each do |player|
+          if player[:player_name] == players_name
+            return player[:points]
+          end
+        end
+      end
+     # binding.pry
+  end
+ end
+end
   
+def shoe_size(players_name)
+  game_hash.each do |place, team|
+    team.each do |attribute, data|
+      if attribute == :players
+        data.each do |player|
+          if player[:player_name] == players_name
+            return player[:shoe]
+          end
+        end
+      end
+     
+  end
+ end
+end
 
+def team_colors(team_name)
+  game_hash.each do |place, team|
+    if team[:team_name] == team_name
+     return  team[:colors]
+   end
+  end
+end
+
+def team_names
+  game_hash.map do |place, team|
+    team[:team_name]
+     #binding.pry
+   end
+end
+
+def player_numbers(team_name)
+  if team[:team_name] == team_name
+    team.each do |attributes, data|
+    if attributes == :players
+      data.each do |player|
+      player[:number]
+    end
+  end
+  end
+ end
+end
+  
 
 
 
