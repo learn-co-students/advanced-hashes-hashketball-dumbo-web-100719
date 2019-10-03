@@ -10,7 +10,7 @@
 This lab is about as representative of real-life tasks as a programmer as you
 can get: data on paper or in tables needs to be given to a programming language
 to deliver _insights_.
-
+rspec spec/hashketball_spec.rb -e num_points_scored
 You're going to perform an analysis on an NBA game. You've been provided some
 basic game data in a series of tables. You're going to ask Ruby to help you
 answer some questions about the game.
