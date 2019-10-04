@@ -260,8 +260,8 @@ def most_points_scored
     team_data.each do |attribute , data|
       if attribute == :players
         data.each do |player_info|
-          player_array << player_info[:player_name]
-          points_scored << player_info[:points]
+          player_array << player_info[:player_name] # same as team_data[:players][0]
+          points_scored << player_info[:points] #same as team_data[:players][3]
         end
       end
     end
