@@ -1,4 +1,3 @@
-require 'pry'
 def game_hash
 basketball_hash = {
   :home => {
