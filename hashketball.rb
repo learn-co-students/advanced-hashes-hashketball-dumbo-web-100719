@@ -1,3 +1,4 @@
+require 'pry'
 def game_hash
   {
     away: { team_name: 'Charlotte Hornets',
@@ -102,6 +103,7 @@ def game_hash
 end
 
 def num_points_scored(player_name)
+  binding.pry
   game_hash.each do |team, stats|
     stats[:players].each do |player|
       if player[:player_name]==player_name
